@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "esModuleInterop": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "paths": {
+      "@*": ["./src/.vit/*"],
+      "components/*": ["./src/components/*"],
+      "pages/*": ["./src/pages/*"],
+      "layout/*": ["./src/layouts/*"],
+      "service/*": ["./src/services/*"],
+      "utils/*": ["./src/utils/*"],
+      "hook/*": ["./src/hooks/*"],
+      "styles/*": ["./src/styles/*"],
+      "*": ["./src/*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ESNext",
+    "useDefineForClassFields": true
+  },
+  "include": ["./src", "client.d.ts", "global.d.ts"]
+}

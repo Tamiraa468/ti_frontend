@@ -1,0 +1,38 @@
+.text {
+  background: linear-gradient(to bottom, #ffffff 60%, #dc2626);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  transition: all;
+  transition-duration: 700ms;
+}
+
+.line {
+  margin-left: 100px;
+  transition: all;
+  transition-duration: 300ms;
+}
+.lineNoTransform {
+  transform: translate(0px, 0px);
+}
+.lineTransform {
+  transform: translate(80px, -32px);
+}
+
+.lineBackTransform {
+  transform: translate(80px, 32px);
+}
+
+.lineMiddleToDisplay {
+  animation-name: ToDisplayAnim;
+  animation-duration: 300ms;
+}
+
+@keyframes ToDisplayAnim {
+  0% {
+    transform: translate(40px, 32px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

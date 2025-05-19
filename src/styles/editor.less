@@ -1,0 +1,202 @@
+.editor {
+    position: relative;
+  }
+  .editor-inline-toolbar-buttonwrapper {
+    display: inline-block;
+  }
+  
+  .editor-inline-toolbar-button {
+    background: #333;
+    color: #ddd;
+    font-size: 18px;
+    border: 0;
+    padding-top: 5px;
+    vertical-align: bottom;
+    height: 34px;
+    width: 36px;
+    border-radius: 4px;
+  }
+  
+  .editor-inline-toolbar-button svg {
+    fill: #ddd;
+  }
+  
+  .editor-inline-toolbar-button:hover,
+  .editor-inline-toolbar-button:focus {
+    background: #444;
+    outline: 0; /* reset for :focus */
+  }
+  
+  .editor-inline-toolbar-active {
+    color: #6a9cc9;
+  }
+  
+  .editor-inline-toolbar-active svg {
+    fill: #6a9cc9;
+  }
+  
+  .editor-inline-toolbar {
+    position: sticky;
+    border: 1px solid #111;
+    background: #333;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 0px rgba(220, 220, 220, 1);
+    z-index: 2;
+    box-sizing: border-box;
+    width: fit-content;
+  }
+  
+  .editor-inline-toolbar::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #333;
+    border-width: 4px;
+    margin-left: -4px;
+  }
+  
+  .editor-inline-toolbar::before {
+    border-color: rgba(221, 221, 221, 0);
+    border-top-color: #111;
+    border-width: 6px;
+    margin-left: -6px;
+  }
+  
+  .editor-inline-toolbar-alignment-tool {
+    left: 50%;
+    transform: translate(-50%) scale(0);
+    position: absolute;
+    border: 1px solid #111;
+    background: #333;
+    border-radius: 4px;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+  
+  .editor-inline-toolbar-alignment-tool::after,
+  .editor-inline-toolbar-alignment-tool::before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .editor-inline-toolbar-alignment-tool::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #333;
+    border-width: 4px;
+    margin-left: -4px;
+  }
+  
+  .editor-inline-toolbar-alignment-tool::before {
+    border-color: rgba(221, 221, 221, 0);
+    border-top-color: #111;
+    border-width: 6px;
+    margin-left: -6px;
+  }
+  
+  .editor-inline-toolbar-input {
+    height: 34px;
+    width: 220px;
+    padding: 0 12px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    color: #ddd;
+  }
+  
+  .editor-inline-toolbar-input:focus {
+    outline: none;
+  }
+  
+  .editor-inline-toolbar-input::placeholder {
+    color: #aaa;
+  }
+  
+  .editor-inline-toolbar-input-invalid {
+    color: #e65757;
+  }
+  
+  .editor-inline-toolbar-link {
+    color: #2996da;
+    text-decoration: underline;
+  }
+  
+  .editor {
+    box-sizing: border-box;
+    margin-bottom: 2em;
+    min-height: 300px;
+    line-height: 1.6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+  }
+  
+  .title-editor {
+    box-sizing: border-box;
+    margin-top: 1rem;
+    font-family: sohne, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  @media (min-width: 1024px) {
+    .editor {
+      font-size: 16px;
+    }
+  
+    .title-editor {
+      font-size: 21px;
+    }
+  }
+  
+  .editor pre {
+    background-color: rgb(41, 45, 62);
+    margin: 0;
+    padding: 0.2em;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 5px;
+    color: rgb(191, 199, 213);
+  }
+  
+  .editor h1 {
+    font-size: 2em !important;
+  }
+  
+  .editor .myCustomBlockQuote {
+    text-decoration: line-through;
+  }
+  
+  .editor ul {
+    display: block;
+    list-style-type: disc;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+  }
+  
+  .editor p {
+    padding-bottom: 1rem;
+  }
+  
+  .title-editor .public-DraftEditorPlaceholder-inner {
+    font-size: 36px;
+  }
+  
+  .title-editor pre {
+    white-space: pre-wrap;
+    background-color: rgb(41, 45, 62);
+    margin: 0;
+    padding: 0.2em;
+    font-size: 15px;
+    line-height: 1.6em;
+    border-radius: 5px;
+    color: rgb(191, 199, 213);
+  }
+  
+  .title-editor .title {
+    font-size: 36px;
+    font-weight: 700;
+  }
+  

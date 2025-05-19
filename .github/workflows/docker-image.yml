@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout git
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: moonnse
+          password: muunuu123456
+
+      - name: Build the Docker image
+        run: docker build --platform linux/amd64 --build-arg VITE_PASSPHASE=teso@20223 --build-arg VITE_API_URL=http://103.168.56.8:8080/api/v1 --build-arg VITE_FILE_GET_URL=http://103.168.56.8:9000/ --tag moonnse/logistic_front:latest .
+
+      - name: Push the Docker image
+        run: docker push moonnse/logistic_front:latest

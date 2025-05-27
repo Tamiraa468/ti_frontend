@@ -1,24 +1,26 @@
-FROM node:20 AS builder
+FROM node:alpine3.18 AS build
 
-ARG VITE_API_URL
-ARG VITE_FILE_GET_URL
-ARG VITE_PASSPHASE
-ENV VITE_API_URL=$VITE_API_URL
-ENV VITE_FILE_GET_URL=$VITE_FILE_GET_URL
-ENV VITE_PASSPHASE=$VITE_PASSPHASE
+#Declare build arguments
 
-WORKDIR /next/app
-COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install
+ARG REACT_APP_BASE_URL
+ARG REACT_APP_SERVER_BASE_URL
+
+# Set environment variables for the build
+ENV REACT_APP_BASE_URL=${REACT_APP_BASE_URL}
+ENV REACT_APP_SERVER_BASE_URL=${REACT_APP_SERVER_BASE_URL}
+
+#build app
+WORKDIR /app
+COPY package.json .
+RUN npm install 
 COPY . .
-# COPY prod_env ./.env
-RUN yarn build
+# If REACT_APP_BASE-URL is used during the build, declare it as an ARG
+RUN npm run build
 
-# production environment
-FROM nginx:stable-alpine
-COPY --from=builder /next/app/dist /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
+#serve with nginx
+FROM nginx:1.23-alpine
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=build /app/build .
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

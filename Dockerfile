@@ -1,7 +1,6 @@
 FROM node:alpine3.18 AS build
 
 #Declare build arguments
-
 ARG REACT_APP_BASE_URL
 ARG REACT_APP_SERVER_BASE_URL
 
@@ -12,9 +11,8 @@ ENV REACT_APP_SERVER_BASE_URL=${REACT_APP_SERVER_BASE_URL}
 #build app
 WORKDIR /app
 COPY package.json .
-RUN npm install 
+RUN npm install --legacy-peer-deps
 COPY . .
-# If REACT_APP_BASE-URL is used during the build, declare it as an ARG
 RUN npm run build
 
 #serve with nginx
